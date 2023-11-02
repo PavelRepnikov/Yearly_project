@@ -9,4 +9,4 @@
  3)Реализация веб сервиса (Web UI либо Telegram бот)
  
 Ссылки на источники данных:
-https://disk.yandex.ru/d/uAoAz0KQo8kSiw - lenta ru archive
+https://disk.yandex.ru/d/uAoAz0KQo8kSiw - архив ленты ру. Пропарщено от начала архива в 2006 году до 2023 года.
