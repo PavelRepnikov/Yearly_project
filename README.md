@@ -15,3 +15,5 @@
 https://disk.yandex.ru/d/uAoAz0KQo8kSiw - архив ленты ру. Пропарщено от начала архива в 2006 году до 2023 года.
 
 https://disk.yandex.ru/d/vhkGaSgxgvU_FQ - риа новости. Пропарщена главная страница ресурса
+
+Коммерсант, мк.ru - coming soon
