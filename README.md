@@ -12,4 +12,4 @@
  Этап 1.
  
 Ссылки на источник данных:
-https://disk.yandex.ru/d/brmW6yvtytzE-Q - csv файл всех данных, пропарщенных папкой scrappers
+https://disk.yandex.ru/d/Z9bF2McpfyzAKw - csv файл всех данных, пропарщенных папкой scrappers
