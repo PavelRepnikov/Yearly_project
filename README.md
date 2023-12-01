@@ -16,6 +16,8 @@
  
  
 Ссылки на источник данных:
+
+
 https://disk.yandex.ru/d/Z9bF2McpfyzAKw - csv файл всех данных, пропарщенных папкой scrappers(3 гб)
 
 
