@@ -12,7 +12,7 @@ df = pd.read_csv('parsed_news_EDA.csv', sep=';')
 df['date and time'] = pd.to_datetime(df['date and time'])
 print("csv loaded")
 
-from handlers import questions, FSM
+from handlers import questions, FSM, handlers, plot
 
 
 async def main() -> None:
