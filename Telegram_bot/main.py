@@ -19,7 +19,7 @@ async def main() -> None:
     # Initialize Bot instance with a default parse mode which will be passed to all API calls
     bot = Bot(TOKEN, parse_mode=ParseMode.HTML)
     dp = Dispatcher()
-    dp.include_routers(questions.router, FSM.router)
+    dp.include_routers(questions.router, FSM.router, plot.router, handlers.router)
     await dp.start_polling(bot)
 
 
