@@ -6,7 +6,7 @@ from aiogram import Bot, Dispatcher
 from aiogram.enums import ParseMode
 
 
-TOKEN = '6663520385:AAEgYxuDgN9FMczSF4v19wkX98cA5YGmx1E'
+TOKEN = 'Secret!'
 
 df = pd.read_csv('parsed_news_EDA.csv', sep=';', low_memory=False)
 df['date and time'] = pd.to_datetime(df['date and time'])
