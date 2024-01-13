@@ -6,13 +6,13 @@ from aiogram import Bot, Dispatcher
 from aiogram.enums import ParseMode
 
 
-TOKEN = 'secret'
+TOKEN = '6663520385:AAEgYxuDgN9FMczSF4v19wkX98cA5YGmx1E'
 
-df = pd.read_csv('parsed_news_EDA.csv', sep=';')
+df = pd.read_csv('parsed_news_EDA.csv', sep=';', low_memory=False)
 df['date and time'] = pd.to_datetime(df['date and time'])
 print("csv loaded")
 
-from handlers import questions, FSM, handlers, plot
+from handlers import questions, FSM, plot, handlers
 
 
 async def main() -> None:
@@ -27,6 +27,4 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, stream=sys.stdout)
     user_data = {}
     asyncio.run(main())
-
-
 

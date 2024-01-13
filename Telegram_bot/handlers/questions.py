@@ -10,7 +10,7 @@ router = Router()
 
 @router.message(CommandStart())
 async def command_start_handler(message: Message) -> None:
-    await message.answer('Welcome! I am your news bot. Use /news to see the news(TBD), /popular to get top tags of the day, /random to get random news story, /guessadategame to play a game, /head to get head of the DataFrame.')
+    await message.answer('Welcome! I am your news bot. Use /news to see the news(TBD), /popular YYYY-MM-DD to get top tags of the chosen day, /random to get random news story, /guessadategame to play a game, /plot to plot some data.')
 
 
 @router.message(Command("head"))

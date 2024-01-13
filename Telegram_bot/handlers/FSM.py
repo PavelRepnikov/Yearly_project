@@ -50,15 +50,24 @@ async def guess_guessadategame(message: Message, state: FSMContext):
 
     datastr = data['guess']
     datastr = re.search(r"text='(.*?)'", str(datastr))
-    data['guess'] = str(datetime.strptime(str(datastr.group(1)), '%Y-%m-%d'))
+    data['guess'] = (datetime.strptime(str(datastr.group(1)), '%Y-%m-%d'))
 
     pattern = re.compile(r'\d{4}-\d{2}-\d{2}')
     matches = pattern.findall(str(data['answer']))
     print(matches)
-    data['answer'] = str(datetime.strptime(str(matches[0]),  '%Y-%m-%d'))
+    data['answer'] = (datetime.strptime(str(matches[0]),  '%Y-%m-%d'))
+
+    # if data['guess'] == data['answer']:
+    #     await message.answer("Вы угадали!")
+    # else:
+    #     await message.answer("Вы не угадали! Правильный ответ: " + str(data['answer']))
 
     if data['guess'] == data['answer']:
-        await message.answer("Вы угадали!")
+        await message.answer("Вы угадали точно!")
+    elif data['guess'].year == data['answer'].year and data['guess'].month == data['answer'].month:
+        await message.answer("Вы угадали месяц и год. Правильный ответ: " + str(data['answer']))
+    elif data['guess'].year == data['answer'].year:
+        await message.answer("Вы угадали год. Правильный ответ: " + str(data['answer']))
     else:
-        await message.answer("Вы не угадали! Правильный ответ: " + str(data['answer']))
+        await message.answer("Вы не угадали. Правильный ответ: " + str(data['answer']))
     await state.clear()
