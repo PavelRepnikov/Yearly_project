@@ -11,6 +11,7 @@ from main import df
 
 class Form(StatesGroup):
     currently_in_game = State()
+    currently_in_popular = State()
     guess = State()
     answer = State()
 
@@ -57,11 +58,6 @@ async def guess_guessadategame(message: Message, state: FSMContext):
     print(matches)
     data['answer'] = (datetime.strptime(str(matches[0]),  '%Y-%m-%d'))
 
-    # if data['guess'] == data['answer']:
-    #     await message.answer("Вы угадали!")
-    # else:
-    #     await message.answer("Вы не угадали! Правильный ответ: " + str(data['answer']))
-
     if data['guess'] == data['answer']:
         await message.answer("Вы угадали точно!")
     elif data['guess'].year == data['answer'].year and data['guess'].month == data['answer'].month:
@@ -71,3 +67,37 @@ async def guess_guessadategame(message: Message, state: FSMContext):
     else:
         await message.answer("Вы не угадали. Правильный ответ: " + str(data['answer']))
     await state.clear()
+
+
+@router.message(Command("popular"))
+async def start_popular(message: Message, state: FSMContext):
+    await state.set_state(Form.currently_in_popular)
+    await message.answer("Выберите дату в формате: YYYY-MM-DD")
+
+
+@router.message(Form.currently_in_popular)
+async def cmd_popular(
+        message: Message,
+        state: FSMContext
+):
+    if message.text is None:
+        await message.answer(
+            "Ошибка: не переданы аргументы! Пример: /popular YYYY-MM-DD"
+        )
+        return
+    try:
+        datetime.strptime(message.text, '%Y-%m-%d')
+    except ValueError:
+        await message.answer(
+            "Ошибка: неправильный формат команды. Пример:\n YYYY-MM-DD"
+        )
+        return
+    input_date = pd.to_datetime(message.text)
+    selected_data = df[df['date and time'].dt.date == input_date.date()]
+    tags_series = pd.concat([selected_data['tag1'], selected_data['tag2'], selected_data['tag3']])
+    tag_counts = tags_series.value_counts()
+    popular_tags = tag_counts.head(20)
+
+    await message.answer(str(popular_tags))
+    await state.clear()
+

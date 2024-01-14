@@ -32,7 +32,7 @@ async def plot(message: Message, state: FSMContext):
     tag_found = df.map(lambda x1: message.text in str(x1)).any().any()
 
     if tag_found:
-        await message.answer("Сейчас будет построен граф!")
+        await message.answer("Сейчас будет построен график!")
     else:
         await message.answer("Ошибка: нет такого тега!")
         return
