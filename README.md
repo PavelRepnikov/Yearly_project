@@ -33,4 +33,4 @@ https://disk.yandex.ru/d/x8JRQeN-_yA1cA - csv файл всех данных п�
 
 Gif telegram бота
 
-![]https://github.com/PavelRepnikov/Yearly_project/blob/main/gif.gif
+![](https://github.com/PavelRepnikov/Yearly_project/blob/main/gif.gif)
