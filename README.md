@@ -30,3 +30,7 @@ https://disk.yandex.ru/d/Z9bF2McpfyzAKw - csv файл всех данных, п
 
 
 https://disk.yandex.ru/d/x8JRQeN-_yA1cA - csv файл всех данных после EDA(2.73 гб)
+
+Gif telegram бота
+
+![]https://github.com/PavelRepnikov/Yearly_project/blob/main/gif.gif
