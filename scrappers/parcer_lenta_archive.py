@@ -66,62 +66,75 @@ def analyze_page(url0):
     return url0, time_and_date, rubric_text, title_text, clean_text
 
 
-for year in range(2006, 2023):
-    for month in range(1, 12):
-        for day in range(1, 31):
-            while True:
+def get_pages():
+    """
+    in goes nothing,
+    out goes news url - urls of all news pages
+    """
+    for year in range(2006, 2023):
+        for month in range(1, 12):
+            for day in range(1, 31):
+                while True:
 
-                url = base_url + str(year)
-                if month <= 9:
-                    url = url + '/0' + str(month)
-                else:
-                    url = url + '/' + str(month)
-                if day <= 9:
-                    url = url + '/0' + str(day) + '/page/' + str(page_number)
-                else:
-                    url = url + '/' + str(day) + '/page/' + str(page_number)
+                    url = base_url + str(year)
+                    if month <= 9:
+                        url = url + '/0' + str(month)
+                    else:
+                        url = url + '/' + str(month)
+                    if day <= 9:
+                        url = url + '/0' + str(day) + '/page/' + str(page_number)
+                    else:
+                        url = url + '/' + str(day) + '/page/' + str(page_number)
 
-                prev_len = len(news_urls)
+                    prev_len = len(news_urls)
 
-                print(url)
-                try:
-                    page = requests.get(url)
-                except:
-                    # print("ERROR OCCURED")
-                    continue
-                soup = BeautifulSoup(page.text, 'html.parser')
+                    print(url)
+                    try:
+                        page = requests.get(url)
+                    except:
+                        # print("ERROR OCCURED")
+                        continue
+                    soup = BeautifulSoup(page.text, 'html.parser')
 
-                for link in soup.find_all('a'):
-                    if '/news/20' in link.get('href'):
-                        full_url = 'https://lenta.ru' + link.get('href')
-                        news_urls.add(full_url)
-                        # print(full_url)
+                    for link in soup.find_all('a'):
+                        if '/news/20' in link.get('href'):
+                            full_url = 'https://lenta.ru' + link.get('href')
+                            news_urls.add(full_url)
+                            # print(full_url)
 
-                if prev_len == len(news_urls):
-                    break
-                # print(page_number)
-                page_number = page_number + 1
+                    if prev_len == len(news_urls):
+                        break
+                    # print(page_number)
+                    page_number = page_number + 1
 
-            # sleep(random.random())
-            page_number = 1
+                # sleep(random.random())
+                page_number = 1
+    return news_urls
 
 
-# len(news_urls)
+def get_news(news_urls):
+    """
+    in goes news_urls,
+    out goes news_lenta - df of all news pages
+    """
+    for link in tqdm(news_urls):
+        res = analyze_page(link)
+        # print(res)
+        news_lenta.append(res)
+        # sleep(random.random())
+        counter += 1
+        if counter % 1000 == 0:
+            df = pd.DataFrame(news_lenta)
+            df.columns = ['url', 'date and time', 'tag', 'title', 'text']
+            df.to_excel('parsed_news_lenta_archive.xlsx')
+    return news_lenta
 
+
+news_urls = get_pages()
 df1 = pd.DataFrame(news_urls)
 df1.to_excel('urls_lenta_archive.xlsx')
 
-for link in tqdm(news_urls):
-    res = analyze_page(link)
-    # print(res)
-    news_lenta.append(res)
-    # sleep(random.random())
-    counter += 1
-    if counter % 1000 == 0:
-        df = pd.DataFrame(news_lenta)
-        df.columns = ['url', 'date and time', 'tag', 'title', 'text']
-        df.to_excel('parsed_news_lenta_archive.xlsx')
-
+news_lenta = get_news(news_urls)
 
 df = pd.DataFrame(news_lenta)
 df.columns = ['url', 'date and time', 'tag', 'title', 'text']

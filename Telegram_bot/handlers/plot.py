@@ -12,6 +12,7 @@ from aiogram.fsm.context import FSMContext
 import pandas as pd
 from aiogram.types import BufferedInputFile
 
+
 class Form(StatesGroup):
     currently_in_plot = State()
 

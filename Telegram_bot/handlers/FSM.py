@@ -18,6 +18,7 @@ class Form(StatesGroup):
 
 router = Router()
 
+
 @router.message(Command("guessadategame"))
 async def start_guessadategame(message: Message, state: FSMContext):
     random_row = df.sample(n=1)
