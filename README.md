@@ -36,4 +36,4 @@ https://drive.google.com/file/d/1Fd7mIda8d2KjbyBAlVn6g9HkcFvcjbSz/view?usp=drive
 
 Gif telegram бота
 
-![](https://github.com/PavelRepnikov/Yearly_project/blob/main/gif.gif)
+![](https://github.com/PavelRepnikov/Yearly_project/blob/main/images/gif.gif)
