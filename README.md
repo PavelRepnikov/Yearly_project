@@ -34,6 +34,26 @@ https://disk.yandex.ru/d/x8JRQeN-_yA1cA - csv файл всех данных п�
 
 https://drive.google.com/file/d/1Fd7mIda8d2KjbyBAlVn6g9HkcFvcjbSz/view?usp=drive_link - данные после обработки с определенным тэгом для статей с несколькими тэгами.
 
-Gif telegram бота
 
-![](https://github.com/PavelRepnikov/Yearly_project/blob/main/Images/gif.gif)
+ Этап 2.
+
+На данный момент реализованы ML решения проекта
+
+
+ Этап 3.
+ 
+Реализованы FastApi и telegram бот
+
+Docker images:
+
+https://hub.docker.com/r/pavelrepnikov/hw4_fastapi_app
+
+https://hub.docker.com/r/antonai/telegram_bot
+
+Gif работы telegram бота
+
+![](https://github.com/PavelRepnikov/Yearly_project/blob/main/Images/gif1.gif)
+
+Gif работы FastApi приложения
+
+![](https://github.com/PavelRepnikov/Yearly_project/blob/main/Images/gif2.gif)
