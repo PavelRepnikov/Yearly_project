@@ -50,10 +50,18 @@ https://hub.docker.com/r/pavelrepnikov/hw4_fastapi_app
 
 https://hub.docker.com/r/antonai/telegram_bot
 
-Gif работы telegram бота
+Видео работы telegram бота
 
-![](https://github.com/PavelRepnikov/Yearly_project/blob/main/Images/gif1.gif)
 
-Gif работы FastApi приложения
 
-![](https://github.com/PavelRepnikov/Yearly_project/blob/main/Images/gif2.gif)
+https://github.com/PavelRepnikov/Yearly_project/assets/148060631/0daa4404-5380-40f2-bb85-65707d3c1bec
+
+
+
+Видео работы FastApi приложения
+
+
+
+https://github.com/PavelRepnikov/Yearly_project/assets/148060631/4c6839c6-c65e-498f-846d-614278ad010f
+
+
