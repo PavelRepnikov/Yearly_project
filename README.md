@@ -48,7 +48,41 @@ Docker images:
 
 https://hub.docker.com/r/pavelrepnikov/hw4_fastapi_app
 
+Инструкция, для использования docker образа hw4_fastapi_app
+
+1. Для загрузки Docker-образа с Docker Hub выполните следующую команду:
+
+   
+docker pull pavelrepnikov/hw4_fastapi_app
+
+Эта команда загрузит образ pavelrepnikov/hw4_fastapi_app с Docker Hub на
+ваш компьютер.
+
+2. Чтобы запустить контейнер на основе загруженного образа, выполните
+следующую команду:
+
+docker run -p 8000:8000 pavelrepnikov/hw4_fastapi_app:1.0
+
+3. Чтобы получить доступ к API сервиса, зайдите на http://localhost:8000/docs
+
 https://hub.docker.com/r/antonai/telegram_bot
+
+Инструкция, для использования docker образа telegram_bot
+
+1. Для загрузки Docker-образа с Docker Hub выполните следующую команду:
+docker pull antonai/telegram_bot:tg_bot_1
+
+Эта команда загрузит образ antonai/telegram_bot с тегом tg_bot_1 с Docker Hub на
+ваш компьютер.
+
+2. Чтобы запустить контейнер на основе загруженного образа, выполните
+следующую команду:
+
+docker run -p 8080:80 antonai/telegram_bot:tg_bot_1
+
+3. Чтобы получить доступ к телеграм боту, зайдите на https://t.me/news_data_analysis_bot
+
+
 
 Видео работы telegram бота
 
