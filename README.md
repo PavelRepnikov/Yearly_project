@@ -37,7 +37,7 @@ https://drive.google.com/file/d/1Fd7mIda8d2KjbyBAlVn6g9HkcFvcjbSz/view?usp=drive
 
  # Этап 2.
 
-На данный момент реализованы ML решения проекта
+На данный момент реализованы ML и DL решения проекта
 
 
  # Этап 3.
